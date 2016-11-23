@@ -9,26 +9,12 @@ This is a Scala wrapper for the MaxMind [Java Geo-IP] [java-lib] library. The ma
 3. **Better type safety** - the MaxMind Java library is somewhat null-happy. This wrapper uses Option boxing wherever possible
 4. **Better performance** - as well as or instead of using MaxMind's own caching (`GEOIP_MEMORY_CACHE`), you can also configure an LRU (Least Recently Used) cache of variable size
 
-## Installation
+## Installation via maven
 
-The latest version of scala-maxmind-iplookups is **0.2.0** and is compatible with all Scala versions from 2.9.3 onwards.
-
-Add this to your SBT config:
 
 ```scala
-// Resolvers
-val snowplowRepo = "SnowPlow Repo" at "http://maven.snplow.com/releases/"
-val twitterRepo  = "Twitter Maven Repo" at "http://maven.twttr.com/"
-
-// Dependency
-val maxmindIpLookups = "com.snowplowanalytics"  %% "scala-maxmind-iplookups"  % "0.2.0"
+$> mvn -e scala:compile assembly:assembly package
 ```
-
-Note the double percent (`%%`) between the group and artifactId. That'll ensure you get the right package for your Scala version.
-
-Retrieve the `GeoLiteCity.dat` file from the [MaxMind downloads page] [maxmind-downloads] ([direct link] [geolitecity-dat]).
-
-MaxMind also has databases for looking up [ISPs][maxmind-isp], [organizations][maxmind-org], and [domain names][maxmind-domain] from IP addresses. Scala MaxMind IP Lookups supports all of these.
 
 ## Usage
 
